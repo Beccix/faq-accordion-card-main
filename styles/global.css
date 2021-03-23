@@ -1,0 +1,64 @@
+:root {
+    --Soft-red: hsl(14, 88%, 65%);
+    --Soft-violet: hsl(273, 75%, 66%);
+    --Soft-blue: hsl(240, 73%, 65%);
+    --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+}
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    background: rgb(175,103,233);
+    background: linear-gradient(0deg, rgba(175,103,233,1) 0%, rgba(101,101,231,1) 100%);
+    height: 100vh;
+    text-align: center;
+    Font-size: 12px;
+    }
+
+* {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+.container {
+    margin: 10rem auto 0rem auto;
+    padding-top: 10rem;
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+    background-color: white;
+    width: 36rem;
+    height: 63rem;
+    border-radius: 3rem;
+}
+
+.image {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.faq-questions {
+    margin: auto auto;  
+}
+
+.faq-p {
+    border-bottom: 2px solid currentColor;
+    display: inline-block;
+    line-height: 4.85; 
+}
