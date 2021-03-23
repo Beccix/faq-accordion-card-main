@@ -53,6 +53,13 @@ h1 {
     font-size: 3rem;
 }
 
+.icon {
+    background: url('/images/icon-arrow-down.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+}
+
 .faq-questions {
     margin: auto auto;  
 }
@@ -61,4 +68,14 @@ h1 {
     border-bottom: 2px solid currentColor;
     display: inline-block;
     line-height: 4.85; 
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+    overflow: hidden;
+    transition: height 5s ease;
 }
