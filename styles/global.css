@@ -3,13 +3,13 @@
     --Soft-violet: hsl(273, 75%, 66%);
     --Soft-blue: hsl(240, 73%, 65%);
     --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --Dark-grayish-blue: hsl(240, 6%, 50%);
+    --Light-grayish-blue: hsl(240, 5%, 91%);
 }
-html,
-body {
-    padding: 0;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+html {
+    box-sizing: border-box;
+    font-size: 100%
 }
 
 *, *::before, *::after {
@@ -17,65 +17,62 @@ body {
 }
 
 body {
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-family: 'Kumbh Sans', sans-serif;
     background: rgb(175,103,233);
-    background: linear-gradient(0deg, rgba(175,103,233,1) 0%, rgba(101,101,231,1) 100%);
-    height: 100vh;
-    text-align: center;
-    Font-size: 12px;
+    background: linear-gradient(var(--Soft-violet), var(--Soft-blue));
+    Font-size: 0,75rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 2rem;
+    margin: 4rem auto;
+    width: 49.5rem;
+    height: 27.5rem;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+}
+
+button {
+    border:none;
+    outline: none;
+    background: none;
+}
+
+.accordion-body {
+    display: none
+}
+
+@media (min-width: 56em) {
+    .card {
+        overflow: hidden;
+        display: flex;
+        margin: 5rem auto;
+        padding-right: 5rem;
     }
 
-* {
-    box-sizing: border-box;
-    font-size: 100%;
-}
+    .card-image,
+    .accordion {
+        flex: 1;
+    }
 
-.container {
-    margin: 10rem auto 0rem auto;
-    padding-top: 10rem;
-    padding-left: 2.25rem;
-    padding-right: 2.25rem;
-    background-color: white;
-    width: 36rem;
-    height: 63rem;
-    border-radius: 3rem;
-}
+    .card-image {
+        display: flex;
+        align-items: center;
+        transform: translateX(-4rem);
+    }
 
-.image {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0rem;
-    margin-left: auto;
-    margin-right: auto;
-}
+    .card-image img  {
+        width: 23rem;
+    }
 
-h1 {
-    font-size: 3rem;
-}
-
-.icon {
-    background: url('/images/icon-arrow-down.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    border: none;
-}
-
-.faq-questions {
-    margin: auto auto;  
-}
-
-.faq-p {
-    border-bottom: 2px solid currentColor;
-    display: inline-block;
-    line-height: 4.85; 
-}
-
-.hide {
-    display: none;
-}
-
-.show {
-    display: block;
-    overflow: hidden;
-    transition: height 5s ease;
+    .accordion {
+        padding-top: 3.75rem;
+    }
 }
