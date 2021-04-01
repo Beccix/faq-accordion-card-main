@@ -1,19 +1,15 @@
-function HideShow() {
-    const elementFirst = document.getElementById('p-target');
-    if (elementFirst.classList.contains('hide')) {
-        elementFirst.classList.remove('hide')
-        elementFirst.classList.add('show')
-    } else {
-        elementFirst.classList.add('hide')
-        elementFirst.classList.remove('show')
-    }
+let accItem = document.getElementsByClassName('accordion-item');
+let accBody = document.getElementsByClassName('accordion-button');
 
-    const elementSecond = document.getElementById('p-target');
-    if (element.classList.contains('hide')) {
-        element.classList.remove('hide')
-        element.classList.add('show')
-    } else {
-        element.classList.add('hide')
-        element.classList.remove('show')
-    }
+for (i = 0; i < accBody.length; i++) {
+    accBody[i].addEventListener('click', toggleItem, false)
 }
+    function toggleItem() {
+        let itemClass = this.parentNode.className;
+        for (let i = 0; i < accItem.length; i++) {
+            accItem[i].className = 'accordion-item hide';
+        }
+        if (itemClass === 'accordion-item hide') {
+            this.parentNode.className = 'accordion-item show';
+        }
+    }

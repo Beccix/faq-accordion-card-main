@@ -27,7 +27,7 @@ body {
 }
 
 .card {
-    background: #fff;
+    background: rgb(255, 255, 255);
     border-radius: 2rem;
     margin: 4rem auto;
     width: 49.5rem;
@@ -39,22 +39,63 @@ body {
     height: auto;
 }
 
-button {
-    border:none;
+.accordion-item {
+    border-bottom: 0.125rem solid rgba(0, 0, 0, 0.075);
+}
+
+.accordion-button {
+    font-size: 0.90rem;
+    cursor: pointer;
+    transition: 0.4s;
+    opacity: 0.75;
+    border: none;
     outline: none;
     background: none;
+    margin-bottom: 1.85rem;
 }
 
-.accordion-body {
-    display: none
+.hide .accordion-button {
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
 }
 
-@media (min-width: 56em) {
+.show .accordion-button {
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+} 
+
+.hide .accordion-body {
+    height:0px;
+    transition:height 1s ease-out;
+	transform: scaleY(0);
+    display: block;
+    content: "";
+    margin-bottom: 0rem;
+}
+
+.show .accordion-body {
+    width: 19rem;
+    font-size: 0.90rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.active {
+    opacity: 1;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+@media (min-width: 62.5em) {
+
     .card {
-        overflow: hidden;
+        width: 49.25rem;
+        height: 27.43rem;
+        position: relative;
         display: flex;
-        margin: 5rem auto;
-        padding-right: 5rem;
+        margin: 6rem auto;
+        padding-right: 2rem;
     }
 
     .card-image,
@@ -63,16 +104,30 @@ button {
     }
 
     .card-image {
+        overflow: hidden;
         display: flex;
         align-items: center;
-        transform: translateX(-4rem);
     }
 
     .card-image img  {
-        width: 23rem;
+        width: 24rem;
+        transform: translateX(-4rem);
+    }
+
+    .box-img {
+        width: 11rem;
+        position: absolute;
+        transform: translateX(-50%) translateY(11rem);
+        z-index: 2;
     }
 
     .accordion {
-        padding-top: 3.75rem;
+        padding-top: 4rem;
+        width: 0%;
     }
+
+    .accordion-button {
+        font-size: 0.79rem;
+    }
+
 }
