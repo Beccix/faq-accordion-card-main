@@ -23,7 +23,7 @@ body {
     font-family: 'Kumbh Sans', sans-serif;
     background: rgb(175,103,233);
     background: linear-gradient(var(--Soft-violet), var(--Soft-blue));
-    Font-size: 0,75rem;
+    Font-size: 0.75rem;
 }
 
 .card {
@@ -51,18 +51,38 @@ body {
     border: none;
     outline: none;
     background: none;
-    margin-bottom: 1.85rem;
+}
+
+h2 {
+    font-size: .80rem;
+    margin: 0.30rem 0 0.30rem 0;
+}
+
+.accordion-button::after {
+    content: ' ';
+    display: block;
+    transform: translateY(-1rem) translateX(20rem);
+    width: 0.60rem;
+    height: 0.60rem;
+    background-image: url('/images/icon-arrow-down.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
 
 .hide .accordion-button {
-    margin-top: 0.8rem;
-    margin-bottom: 0.8rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
 }
 
 .show .accordion-button {
-    margin-top: 0.8rem;
-    margin-bottom: 0.8rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
 } 
+
+.accordion-body {
+    transform: translateX(0.5rem);
+}
 
 .hide .accordion-body {
     height:0px;
@@ -81,10 +101,11 @@ body {
     opacity: 0.5;
 }
 
-.active {
+.active h2{
     opacity: 1;
     font-weight: bold;
     font-size: 1rem;
+    transition-duration: 5ms;
 }
 
 @media (min-width: 62.5em) {
@@ -129,5 +150,4 @@ body {
     .accordion-button {
         font-size: 0.79rem;
     }
-
 }
