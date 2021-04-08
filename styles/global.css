@@ -26,6 +26,10 @@ body {
     Font-size: 0.75rem;
 }
 
+h1, h2, div {
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
 .card {
     background: rgb(255, 255, 255);
     border-radius: 2rem;
@@ -56,6 +60,12 @@ body {
 h2 {
     font-size: .80rem;
     margin: 0.30rem 0 0.30rem 0;
+    
+}
+
+h2:hover {
+    cursor: pointer;
+    color: var(--Soft-red);
 }
 
 .accordion-button::after {
@@ -68,6 +78,10 @@ h2 {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+}
+
+.show .accordion-button::after {
+    transform: translateY(-1rem) translateX(20rem)rotate(-180deg);
 }
 
 .hide .accordion-button {
@@ -85,8 +99,7 @@ h2 {
 }
 
 .hide .accordion-body {
-    height:0px;
-    transition:height 1s ease-out;
+    height:0rem;
 	transform: scaleY(0);
     display: block;
     content: "";
@@ -94,18 +107,27 @@ h2 {
 }
 
 .show .accordion-body {
-    width: 19rem;
+    height: auto;
     font-size: 0.90rem;
     font-weight: bold;
     margin-bottom: 1rem;
     opacity: 0.5;
+    transition: height 1s
+}
+
+.show .accordion-body {
+    transition:height 1s ease-out;
 }
 
 .active h2{
     opacity: 1;
     font-weight: bold;
+    font-size: 0.70rem;
+    transition: font-size 1s;
+}
+
+.active h2{
     font-size: 1rem;
-    transition-duration: 5ms;
 }
 
 @media (min-width: 62.5em) {
@@ -117,6 +139,7 @@ h2 {
         display: flex;
         margin: 6rem auto;
         padding-right: 2rem;
+        z-index: 1;
     }
 
     .card-image,
@@ -130,9 +153,16 @@ h2 {
         align-items: center;
     }
 
-    .card-image img  {
+    .woman-online {
         width: 24rem;
         transform: translateX(-4rem);
+    }
+
+    .bg-woman {
+        position: absolute;
+        right: 29rem;
+        width: 30rem;
+        height: 33rem;
     }
 
     .box-img {
@@ -150,4 +180,80 @@ h2 {
     .accordion-button {
         font-size: 0.79rem;
     }
+}
+
+@media (max-width: 62.4em) {
+    body {
+        min-height: 100vh;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .card {
+        width: 40.25rem;
+        height: 80rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin: 8rem auto;
+        padding-right: 0;
+    }
+
+    .box-img {
+        width: 13rem;
+        position: absolute;
+        left: 4rem;
+        top: -6rem;
+        z-index: 2;
+    }
+
+    .card-image {
+        height: 9rem;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3rem;
+    }
+
+    .woman-online {
+        height: 20rem;
+        transform: translateY(-16em);
+    }
+
+    .bg-woman {
+        display: none;
+    }
+
+    .accordion {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        margin: 0 auto 2rem auto;
+        display: flex;
+        justify-content: center;
+        width: 25rem;
+    }
+
+    .accordion-item, .accordion-button {
+        width: 80%;
+    }
+
+    .accordion-item {
+        width: 97%;
+        margin-left: 0.50rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border-bottom: 0.125rem solid rgba(0, 0, 0, 0.075);
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    .active h2 {
+        font-size: 1.7rem;
+    }
+
 }
