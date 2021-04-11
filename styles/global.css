@@ -68,18 +68,6 @@ h2:hover {
     color: var(--Soft-red);
 }
 
-.accordion-button::after {
-    content: ' ';
-    display: block;
-    transform: translateY(-1rem) translateX(20rem);
-    width: 0.60rem;
-    height: 0.60rem;
-    background-image: url('/images/icon-arrow-down.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-}
-
 .show .accordion-button::after {
     transform: translateY(-1rem) translateX(20rem)rotate(-180deg);
 }
@@ -99,31 +87,28 @@ h2:hover {
 }
 
 .hide .accordion-body {
-    height:0rem;
+    max-height: 0rem;
+    transition: max-height 200ms;
 	transform: scaleY(0);
     display: block;
     content: "";
     margin-bottom: 0rem;
 }
-
+ 
 .show .accordion-body {
-    height: auto;
+    max-height: 3rem;
     font-size: 0.90rem;
     font-weight: bold;
     margin-bottom: 1rem;
     opacity: 0.5;
-    transition: height 1s
-}
-
-.show .accordion-body {
-    transition:height 1s ease-out;
+    overflow: hidden;
 }
 
 .active h2{
     opacity: 1;
     font-weight: bold;
     font-size: 0.70rem;
-    transition: font-size 1s;
+    transition: font-size 700ms;
 }
 
 .active h2{
@@ -180,6 +165,18 @@ h2:hover {
     .accordion-button {
         font-size: 0.79rem;
     }
+
+    .accordion-button::after {
+        content: ' ';
+        display: block;
+        transform: translateY(-1rem) translateX(20rem);
+        width: 0.60rem;
+        height: 0.60rem;
+        background-image: url('/images/icon-arrow-down.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
 }
 
 @media (max-width: 62.4em) {
@@ -190,9 +187,8 @@ h2:hover {
     }
 
     .card {
-        width: 40.25rem;
-        height: 80rem;
-        position: relative;
+        width: 80vw;
+        height: 33rem;
         display: flex;
         flex-direction: column;
         margin: 8rem auto;
@@ -200,14 +196,11 @@ h2:hover {
     }
 
     .box-img {
-        width: 13rem;
-        position: absolute;
-        left: 4rem;
-        top: -6rem;
-        z-index: 2;
+       display: none;
     }
 
     .card-image {
+        position: relative;
         height: 9rem;
         display: flex;
         justify-content: center;
@@ -215,6 +208,8 @@ h2:hover {
     }
 
     .woman-online {
+        width: 50vw;
+        min-width: 20rem;
         height: 20rem;
         transform: translateY(-16em);
     }
@@ -232,28 +227,54 @@ h2:hover {
         margin: 0 auto 2rem auto;
         display: flex;
         justify-content: center;
-        width: 25rem;
     }
 
-    .accordion-item, .accordion-button {
-        width: 80%;
+    .show.accordion-item .accordion-body {
+        height: 2.4rem;
+        margin-top: 1rem;
+        margin-bottom: 0rem;
+    }
+
+    .accordion-button {
+        display: flex;
+    }
+
+    h2 {
+        font-size: 3vw;
+        font-weight:normal;
+        height: 1rem;
+    }
+
+    .active h2 {
+        font-size: 3.2vw;
+        font-weight: bold;
     }
 
     .accordion-item {
         width: 97%;
+        height: 5,50rem;
         margin-left: 0.50rem;
+        margin-right: 0.50rem;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         border-bottom: 0.125rem solid rgba(0, 0, 0, 0.075);
     }
 
-    h2 {
-        font-size: 1.7rem;
+    .accordion-button::before {
+        content: "";
+        display: block;
+        transform: translateX(72vw) translateY(2vh);
+        width: 0.60rem;
+        height: 0.60rem;
+        background-image: url('/images/icon-arrow-down.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
     }
 
-    .active h2 {
-        font-size: 1.7rem;
+    .show .accordion-button::before {
+        transform: rotate(180deg) translateX(-72vw) translateY(-2vh);
     }
-
+    
 }
