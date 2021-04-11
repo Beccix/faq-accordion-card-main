@@ -188,6 +188,7 @@ h2:hover {
 
     .card {
         width: 80vw;
+        min-width: 30rem;
         height: 33rem;
         display: flex;
         flex-direction: column;
@@ -208,6 +209,7 @@ h2:hover {
     }
 
     .woman-online {
+        position: relative;
         width: 50vw;
         min-width: 20rem;
         height: 20rem;
@@ -215,7 +217,13 @@ h2:hover {
     }
 
     .bg-woman {
-        display: none;
+        width: 51vw;
+        min-width: 20rem;
+        height: 63vh;
+        position: absolute;
+        bottom: -1rem;
+        background-image: url(/images/bg-pattern-mobile.svg);
+        background-repeat: no-repeat;
     }
 
     .accordion {
@@ -229,10 +237,15 @@ h2:hover {
         justify-content: center;
     }
 
+    .accordion-body {
+        padding-left: 1vw;
+        width: 60vw;
+    }
+
     .show.accordion-item .accordion-body {
-        height: 2.4rem;
-        margin-top: 1rem;
-        margin-bottom: 0rem;
+        height: auto;
+        margin-top: 0.50rem;
+        margin-bottom: 0.50rem;
     }
 
     .accordion-button {
@@ -240,7 +253,7 @@ h2:hover {
     }
 
     h2 {
-        font-size: 3vw;
+        font-size: max(3vw, 1rem);
         font-weight:normal;
         height: 1rem;
     }
@@ -264,7 +277,7 @@ h2:hover {
     .accordion-button::before {
         content: "";
         display: block;
-        transform: translateX(72vw) translateY(2vh);
+        transform: translateX(73vw) translateY(2vh);
         width: 0.60rem;
         height: 0.60rem;
         background-image: url('/images/icon-arrow-down.svg');
@@ -274,7 +287,7 @@ h2:hover {
     }
 
     .show .accordion-button::before {
-        transform: rotate(180deg) translateX(-72vw) translateY(-2vh);
+        transform: rotate(180deg) translateX(-73vw) translateY(-2vh);
     }
-    
 }
+
